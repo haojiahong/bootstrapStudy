@@ -45,7 +45,19 @@ var obj = new A(5,10); //new这个关键字是关键。
 var obj2 = A(6,11);
 
 console.debug(obj);
-console.debug(obj2);
+console.debug(obj2);//undefined
+	
+//(3)函数方式调用时
+var a = 1;
+var b = 2;
+var add = function(a,b){
+	return this.a+this.b;
+}
+var sum = add(5,6);
+console.debug(sum);//显示3 this指向了全局变量
+console.debug(add);
+console.debug(add.prototype);//显示object
+	
 //------------------------------------
 Function.prototype.method = function (name , func){
 	this.prototype[name] = func;
